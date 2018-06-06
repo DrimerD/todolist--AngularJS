@@ -19,7 +19,7 @@
                     <img class="prefer" src="images/preference.png" alt="Налаштування" ng-click="showInputUserName()">
                 </div>
                 <div class="head">
-                    <h3 class="authorName" ng-bind="userName"> {{ authorName }} </h3>
+                    <h3 class="authorName" ng-bind="authorName"> {{ authorName }} </h3>
                 </div>
             </div>
             <div class="tdContainer">
@@ -28,14 +28,26 @@
                 </div>
                 <div>
                     <ul class="tdList" ng-repeat="(key, value) in allTasks track by key">
-                        <li class="tdItem" data-id="{{key}}"> {{value.task}} <img src="images/clear.png" alt="видалити" ng-click="removeTask($event)"> </li>
+                        <li class="tdItem" data-id="{{key}}">
+                            <label ng-if="!value.check">
+                                <input type="checkbox">
+                                <span></span>
+                            </label>
+
+                            <label ng-if="value.check">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+                            <p>{{value.task}}</p>
+                            <img src="images/clear.png" alt="видалити" ng-click="removeTask($event)">
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="border-bott"></div>
         </section>
         <div class="input-author animated" ng-class="{ 'bounceOutDown' : bounceOutDown, 'bounceInUp' : bounceInUp, 'position' : position }">
-            <input type="text" placeholder="Enter Authors" ng-enter="addUserName()" ng-escape="closeInputUserName()" ng-model="userName">
+            <input type="text" placeholder="Enter Authors" ng-enter="addUserName()" ng-escape="closeInputUserName()" ng-model="authorName">
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
