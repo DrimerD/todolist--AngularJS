@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="taskManagerApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+</head>
+<body ng-controller="TaskManagerController">
+    <h1>TO DO LIST</h1>
+    <div class="pos">
+        <section class="container">
+            <div class="header">
+                <div class="preference">
+                    <img class="prefer" src="images/preference.png" alt="Налаштування" ng-click="showInputUserName()">
+                </div>
+                <div class="head">
+                    <h3 class="authorName" ng-bind="userName"> {{ authorName }} </h3>
+                </div>
+            </div>
+            <div class="tdContainer">
+                <div class="tdInput">
+                    <input type="text" placeholder="Enter a note" ng-model="newTask" ng-enter="addNewTask()">
+                </div>
+                <div>
+                    <ul class="tdList" ng-repeat="(key, value) in allTasks track by key">
+                        <li class="tdItem" data-id="{{key}}"> {{value.task}} <img src="images/clear.png" alt="видалити" ng-click="removeTask($event)"> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-bott"></div>
+        </section>
+        <div class="input-author animated" ng-class="{ 'bounceOutDown' : bounceOutDown, 'bounceInUp' : bounceInUp, 'position' : position }">
+            <input type="text" placeholder="Enter Authors" ng-enter="addUserName()" ng-escape="closeInputUserName()" ng-model="userName">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
