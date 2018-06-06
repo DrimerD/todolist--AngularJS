@@ -192,8 +192,8 @@ label span {
 [type=checkbox]:checked + span:before {
     content: '\2714';
     position: absolute;
-    top: -5px;
-    left: 0;
-    font-size:23px;
+    top: -4px;
+    left: 3px;
+    font-size:18px;
     color:green;
 }
