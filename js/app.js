@@ -4,21 +4,6 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
 
     $scope.position = true;
     $scope.authorName = 'Author list';
-    // $scope.allTasks = {
-    //     0:  {
-    //         'task' : 'hello',
-    //         'check': true
-    //     },
-    //     1: {
-    //         'task' : 'hefdsfdllo',
-    //         'check': false
-    //     },
-    //     2: {
-    //         'task' : 'hefdsfsdfsdllo',
-    //         'check': true
-    //     },
-    // };
-
     $scope.allTasks =
         [{
             'task': 'hello',
@@ -44,8 +29,6 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
         $scope.bounceInUp = false;
 
         $scope.authorName = $scope.authorName;
-        // localStorage.setItem('-1', $scope.userName);
-        // $scope.authorName = localStorage.getItem('-1');
     };
 
     $scope.closeInputUserName = function () {
@@ -64,8 +47,8 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
         }
     };
 
-    $scope.removeTask = function ($event) {
-        $scope.allTasks.splice($scope.allTasks.indexOf($event.target.parentElement.dataset.id), 1);
+    $scope.removeTask = function (task) {
+        $scope.allTasks.splice($scope.allTasks.indexOf(task), 1);
     };
 })
     .directive('ngEnter', function() {
