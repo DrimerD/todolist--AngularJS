@@ -47,7 +47,7 @@
             <div class="border-bott"></div>
         </section>
         <div class="input-author animated" ng-class="{ 'bounceOutDown' : bounceOutDown, 'bounceInUp' : bounceInUp, 'position' : position }">
-            <input type="text" placeholder="Enter Authors" ng-enter="addUserName()" ng-escape="closeInputUserName()" ng-model="authorName">
+            <input type="text" placeholder="Enter Authors" ng-enter="addUserName(authorName)" ng-escape="closeInputUserName()" ng-model="authorName">
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

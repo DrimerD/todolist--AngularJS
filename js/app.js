@@ -24,11 +24,11 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
         $scope.position = false;
     };
     
-    $scope.addUserName = function () {
+    $scope.addUserName = function (userName) {
         $scope.bounceOutDown = true;
         $scope.bounceInUp = false;
 
-        $scope.authorName = $scope.authorName;
+        $scope.authorName = userName;
     };
 
     $scope.closeInputUserName = function () {
