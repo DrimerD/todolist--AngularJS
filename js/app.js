@@ -37,7 +37,7 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
     };
 
     $scope.addNewTask = function () {
-        if ($scope.newTask.length > 0 && $scope.newTask != '') {
+        if ($scope.newTask) {
             $scope.allTasks.push({
                 'task' : $scope.newTask,
                 'check': false
