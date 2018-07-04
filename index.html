@@ -27,8 +27,8 @@
                     <input type="text" placeholder="Enter a note" ng-model="newTask" ng-enter="addNewTask()">
                 </div>
                 <div>
-                    <ul class="tdList" ng-repeat="(key, value) in allTasks track by key">
-                        <li class="tdItem" data-id="{{key}}">
+                    <ul class="tdList">
+                        <li class="tdItem"  ng-repeat="(key, value) in allTasks track by key" data-id="{{key}}">
                             <label ng-if="!value.check">
                                 <input type="checkbox">
                                 <span></span>
@@ -38,7 +38,10 @@
                                 <input type="checkbox" checked>
                                 <span></span>
                             </label>
-                            <p>{{value.task}}</p>
+                            <!--<p>{{value.task}}</p>-->
+                            <img src="images/update-logo.png" alt="update list item" ng-click="updateTask($event)">
+
+                            <p><input type="text" value="{{value.task}}" disabled></p>
                             <img src="images/clear.png" alt="delete" ng-click="removeTask(value)">
                         </li>
                     </ul>

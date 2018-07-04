@@ -17,6 +17,7 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
             'task' : 'hefdsfsdfsdllo',
             'check' : true
         }];
+    $scope.statusCorrectTask = false;
 
     $scope.showInputUserName = function () {
         $scope.bounceInUp = true;
@@ -44,6 +45,25 @@ taskManagerApp.controller('TaskManagerController', function ($scope) {
             });
 
             $scope.newTask ='';
+        }
+    };
+
+    $scope.updateTask = function (event) {
+        $scope.current_image = event.currentTarget;
+        $scope.current_element = event.currentTarget.nextSibling.nextSibling.firstChild;
+        $scope.parent_id = $scope.current_element.parentElement.parentElement.dataset.id;
+        $scope.current_element.disabled = false;
+
+        if(!$scope.statusCorrectTask) {
+            $scope.current_element.select();
+            $scope.current_element.style.borderBottom = '1px solid black';
+            $scope.current_image.src = "images/check-correct.png";
+            $scope.statusCorrectTask = true;
+        } else {
+            $scope.allTasks[$scope.parent_id].task = $scope.current_element.value;
+            $scope.current_element.style.borderBottom = 'none';
+            $scope.statusCorrectTask = false;
+            $scope.current_image.src = "images/update-logo.png";
         }
     };
 

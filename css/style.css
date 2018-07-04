@@ -161,6 +161,12 @@ img:hover{
     text-align: left;
     margin: 3px 0px;
 }
+.tdContainer ul li p input{
+    border: none;
+    width: 98%;
+    outline: none;
+    font: 15px Josefin Slab;
+}
 .tdContainer ul li img{
     width: 20px;
     height: 18px;

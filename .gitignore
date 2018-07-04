@@ -9,3 +9,5 @@ out
 gen
 .gitignore
 .idea/
+.eslintrc.js
+node_modules

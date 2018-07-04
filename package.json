@@ -1,0 +1,27 @@
+{
+  "name": "ToDo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jslint": "./node_modules/.bin/eslint ./js/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrimerD/todolist--AngularJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrimerD/todolist--AngularJS/issues"
+  },
+  "homepage": "https://github.com/DrimerD/todolist--AngularJS#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "gulp": "^3.9.1"
+  },
+  "pre-commit": [
+    "jslint"
+  ]
+}
